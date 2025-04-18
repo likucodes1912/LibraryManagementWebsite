@@ -1,0 +1,37 @@
+{extends 'base.html'%}
+{% block content %}
+    <h1>Displaying an Image in Flask</h1>
+    <img src="{{ url_for('static', filename='images/b.jpg')}}" alt="My Image">
+	<br><br>
+	<p>Html Image</p>
+    <img src="./static/images/b.jpg" alt="No Image">
+{% endblock %}
+
+
+    <!-- <div >
+        <form method="POST" action="mic_button">
+        <button type="submit" class="btn btn-light rounded" name="click" value="btn_click">
+            <i class="bi bi-mic-fill" style="color:#000000;"></i>
+            <span>
+                mic
+            </span>
+        </button>
+    </form>
+    
+    {% if recognized_text %}
+    <div>
+        <p>Recognized Text: {{ recognized_text }}</p>
+        <form id="isbn-form" class="input-group floating-label" method="POST" action="/add_button">
+            <input id="isbn-input" type="text" name="search" class="form-control"
+                placeholder="Enter your ISBN" autocomplete="off" required value="{{recognized_text}}"> &nbsp;
+
+            <button type="submit" name="click" class="btn btn-primary rounded" value="btn_click">
+                <i class="bi bi-folder-plus"></i>
+                <span> Add </span>
+            </button> &nbsp;
+
+        </form>
+    </div>
+    {% endif %}
+    </div> -->
+	
