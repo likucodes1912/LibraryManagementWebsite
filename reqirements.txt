@@ -1,0 +1,15 @@
+mysql-connector==2.2.9
+mysql-connector-python==8.0.33
+mysql-connector-python-rf==2.2.2
+simplejson==3.19.1
+textwrap3==0.9.2
+urllib3==1.26.16
+Flask==2.3.3
+
+openpyxl==3.1.2
+opencv-python==4.8.0.76
+pyzbar==0.1.9
+
+SpeechRecognition==3.10.0
+PyAudio==0.2.13
+
