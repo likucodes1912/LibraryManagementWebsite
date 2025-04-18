@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Book Info</title>
+</head>
+<body>
+    <h1>Add Book Information</h1>
+    <form method="POST" action="/add_button">
+        ISBN: <input type="text" name="search" required><br><br>
+        <input type="submit" name="click" value="Add">
+    </form>
+    
+    <h2>Book Information</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Summary</th>
+                <th>Public Domain</th>
+                <th>Page Count</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.summary }}</td>
+                <td>{{ book.public_domain }}</td>
+                <td>{{ book.page_count }}</td>
+                <td>{{ book.language }}</td>
+				
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+	<form method="POST" action="/clear_all">
+    <input type="submit" name="click" value="Clear All">
+</form>
+ -->
+
+
+
+
+
+<!-- 
+Include JavaScript code to handle saving the table data
+<script>
+    document.getElementById("save-button").addEventListener("click", function() {
+        var table = document.getElementById("book-table");
+        var data = [];
+        
+        // Loop through the rows in the table and extract cell values
+        for (var i = 1; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            var rowData = [];
+            for (var j = 0; j < row.cells.length; j++) {
+                rowData.push(row.cells[j].textContent);
+            }
+            data.push(rowData);
+        }
+
+        // Send the data to the Flask route using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/save_table", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify(data));
+    });
+</script>  -->
+
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Username Table</title>
+</head>
+<body>
+    <h2>Enter Username</h2>
+    <form id="username-form">
+        <input type="text" id="username-input" placeholder="Enter username">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <h2>Username Table</h2>
+    <table id="username-table" border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+             Table rows will be dynamically added here 
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("username-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username-input").value;
+            addUsernameToTable(username);
+        });
+
+        function addUsernameToTable(username) {
+            var table = document.getElementById("username-table");
+            var newRow = table.insertRow(table.rows.length);
+            var cell = newRow.insertCell(0);
+            cell.innerHTML = username;
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table with Remove Buttons</title>
+</head>
+<body>
+    <h1>Table with Remove Buttons</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    <form method="POST" action="/remove_button">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <input type="submit" name="click" value="Remove">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+    

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Recognition</title>
+    
+</head>
+<body>
+    <!-- <script>
+        {% if focus_input %}
+        document.getElementById("inputField").focus();
+        {% endif %}
+    </script> -->
+
+    <h1>Voice Recognition</h1>
+    
+    <form method="POST">
+        <button type="submit" name="voice_recognition">Start Voice Recognition</button>
+    </form>
+
+    <!--
+        NOT WORKING...
+        {% if btn_click %}
+    <button type="submit" name="click" class="btn btn-primary rounded" value="btn_click">
+        <i class="bi bi-folder-plus"></i>
+        <span> Add </span>
+    </button> &nbsp;
+
+    {% endif %} -->
+
+  
+    {% if recognized_text %}
+    <div>
+        <p>Recognized Text: {{ recognized_text }}</p>
+        <input type="input" placeholder="Type here..." value="{{recognized_text}}">
+        <button type="submit" name="click" class="btn btn-primary rounded" value="btn_click">
+            <i class="bi bi-folder-plus"></i>
+            <span> Add </span>
+        </button> &nbsp;
+    </div>
+    {% endif %}
+</body>
+</html>

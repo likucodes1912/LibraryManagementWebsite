@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Example</title>
+</head>
+<body>
+    <h1>File Upload Example</h1>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="fileInput" id="fileInput">
+        <button type="submit">Upload</button>
+    </form>
+</body> 
+</html>
+
+<!--# fileupload = """
+        #         <html>
+        #     <head>
+        #     <script>
+        #     function uploadFile() {
+        #         var fileInput = document.getElementById('fileInput');
+        #         if (fileInput.files.length > 0) {
+        #             var file = fileInput.files[0];
+        #             var fileName = file.name;
+        #             var fileSize = file.size;
+        #
+        #             var formData = new FormData();
+        #             formData.append('file', file);
+        #
+        #             fetch('/upload', {
+        #                 method: 'POST',
+        #                 body: formData
+        #             })
+        #
+        #             .then(response => {
+        #                 if (response.ok) {
+        #                     console.log('File uploaded successfully.');
+        #                 } else {
+        #                     console.error('File upload failed.');
+        #                 }
+        #             })
+        #
+        #             .catch(error => {
+        #                 console.error('Error:', error);
+        #             });
+        #         } else {
+        #             console.error('No file selected.');
+        #         }
+        #     }
+        #     </script>
+        #     </head>
+        #     <body>
+        #         <h1>File Upload Example</h1>
+        #         <input type="file" id="fileInput">
+        #         <button onclick="uploadFile()">Upload</button>
+        #     </body>
+        #     </html>
+        #     """
+        # return render_template_string(fileupload)
+-->
